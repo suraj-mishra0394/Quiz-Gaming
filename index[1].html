@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="nav-wrapper black">
+        <div class="container">
+            <a href="#index.html" class="brand-logo center">Quiz</a>
+        </div>
+    </nav>
+    <section class="container section">
+        <div class="row">
+            <div class="col s12 l6 offset-l3">
+                <form class="myform" name="id" onsubmit="submitted(event)">
+                <h4 class="center-align red-text">Contestant Name</h4></form>
+
+                <div class="progress yellow">
+                    <div class="indeterminate"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons white-text prefix">account_box</i>
+                    <input type="text" class="black-text" id="name">
+                    <label for="name" class="red-text">Name of Contestant</label>
+                    <p class="center"><button type="submit" class="btn blue"
+                        onclick="this.style.display='none'">Submit</button></p>
+                </div>
+
+                <div>
+                    <p class="white-text green">Quiz Rules:</p>
+                    <p class="black-text white">1. You Cannot Skip Any Question.</p>
+                    <p class="black-text white">2. Once Attempt Any Question You Cannot Go To Previous Question.</p>
+                    <p class="black-text white">3. Concentrate On Your Quiz. Don't Help Anyone For Answers.</p>
+                </div>
+
+                <div class="progress yellow">
+                    <div class="indeterminate"></div>
+                </div>
+                <p class="center"><a href="question.html" class="btn blue">Let's Start</a></p>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        function submitted(e){
+            e.preventDefault();
+
+            let namee = document.forms["id"]["name"].value;
+            sessionStorage.sentItem("name", namee)
+        }
+    </script>
+</body>
+</html>
